@@ -14,13 +14,17 @@
   <div class="row justify-content-center">
     <div class="col-sm-8">
       <div id="movies">
-        <% if @movies.any? %>
-          <% @movies.each do |movie| %>
-            <h4><%= movie.title %>. <small>Directed by <%= movie.director.full_name %></small></h4>
-            <p><%= movie.synopsis %></p>
-          <% end %>
-        <% else %>
-          <em>Sorry, no movies found.</em>
+        <%# <% if @movies.any? %>
+          <%# <% @movies.each do |movie| %>
+            <%# <h4><%= movie.title. <small>Directed by <%= movie.director.full_name</small></h4> %>
+            <%# <p><%= movie.synopsis</p> %>
+          <%# <% end %>
+        <%# <% else %>
+          <%# <em>Sorry, no movies found.</em> %>
+        <%# <% end %>
+        <% @results.each do |result| %>
+          <h4><%= result.searchable.title %>.</h4>
+          <p><%= result.searchable.synopsis%></p>
         <% end %>
       </div>
     </div>
